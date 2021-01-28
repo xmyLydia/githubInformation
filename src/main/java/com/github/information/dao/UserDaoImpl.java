@@ -28,7 +28,8 @@ import com.google.gson.Gson;
  */
 @Repository
 public class UserDaoImpl implements UserDao {
-    private static String userAPI = "https://api.github.com/users/";
+    private final static String userAPI = "https://api.github.com/users/";
+    private final static String repositoryAPISuffix="/repos";
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
@@ -39,13 +40,19 @@ public class UserDaoImpl implements UserDao {
     public User findByName(String name) throws IOException {
         //String githubUserAPI = "https://api.github.com/users/" + name;
         String githubUserAPI = userAPI + name;
-        //step1
-        URL url = new URL(githubUserAPI);
+        String jsonStr = httpURLFetching(githubUserAPI);
+        return convertJsonToUser(jsonStr);
+    }
+
+    private User convertJsonToUser(String json) {
+        return new Gson().fromJson(json, User.class);
+    }
+    private String httpURLFetching(String fetchingUrl) throws IOException {
+        URL url = new URL(fetchingUrl);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
 
         con.setRequestProperty("Content-Type", "application/json");
-        String contentType = con.getHeaderField("Content-Type");
         //step4
         con.setConnectTimeout(5000);
         con.setReadTimeout(5000);
@@ -69,12 +76,6 @@ public class UserDaoImpl implements UserDao {
         }
         in.close();
         con.disconnect();
-        String contentStr = content.toString();
-        return convertJsonToUser(contentStr);
+        return content.toString();
     }
-
-    private User convertJsonToUser(String json) {
-        return new Gson().fromJson(json, User.class);
-    }
-
 }
