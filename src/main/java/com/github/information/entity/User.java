@@ -1,6 +1,5 @@
 package com.github.information.entity;
 
-import org.joda.time.DateTime;
 
 /**
  * @author mingyux
