@@ -1,7 +1,5 @@
 package com.github.information.common;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -30,7 +28,8 @@ public class HTTPRequest {
         return result;
     }
 
-    public String httpRepositoryFetching(String fetchingUrl) throws IOException {
+    public String httpRepositoryFetching(String fetchingUrl, int page, int size) throws IOException {
+        fetchingUrl += "?page=" + page + "&per_page=" + size;
         URL url = new URL(fetchingUrl);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         setParameters(con);
@@ -41,7 +40,6 @@ public class HTTPRequest {
         String result = processReposJson(content, in);
         in.close();
         con.disconnect();
-
         return result;
     }
 

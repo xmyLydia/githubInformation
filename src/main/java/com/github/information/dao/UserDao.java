@@ -14,5 +14,5 @@ public interface UserDao {
      * @return list of users
      */
 
-    public User findByName(String name) throws IOException;
+    User findByName(String name) throws IOException;
 }

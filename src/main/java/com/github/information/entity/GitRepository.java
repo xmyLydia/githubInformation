@@ -2,6 +2,8 @@ package com.github.information.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 /**
  * @author mingyux
  */
@@ -75,98 +77,154 @@ public class GitRepository {
     private String mirror_url;//          "": null,
     private boolean archived;//            "": false,
     private boolean disabled;//             "": false,
+    private String visibility;//
     private int open_issues_count;  //          "":0,
-
+    private int watchers;
+    private String default_branch;
+    private int open_issues;
+    @JsonProperty("is_template")
+    private boolean isTemplate;
     private License license;
+    private List<String> topics;
+    private Permissions permissions;
+    private boolean allow_rebase_merge;
+    private String template_repository;
+    private String temp_clone_token;
+    private boolean allow_squash_merge;
+    private boolean delete_branch_on_merge;
+    private boolean allow_merge_commit;
+    private int subscribers_count;
+    private int network_count;
 
     public GitRepository() {
     }
 
-    public GitRepository(String id, String node_id, String name, String full_name, boolean isPrivate, String html_url,
-                         String description, boolean fork, String url, String forks_url, String keys_url,
-                         String collaborators_url, String teams_url, String hooks_url, String issue_events_url,
-                         String events_url, String assignees_url, String branches_url, String tags_url,
-                         String blobs_url, String git_tags_url, String git_refs_url, String trees_url,
-                         String statuses_url, String languages_url, String stargazers_url, String contributors_url,
-                         String subscribers_url, String subscription_url, String commits_url, String git_commits_url,
-                         String comments_url, String issue_comment_url, String contents_url, String compare_url,
-                         String merges_url, String archive_url, String downloads_url, String issues_url,
-                         String pulls_url, String milestones_url, String notifications_url, String labels_url,
-                         String releases_url, String deployments_url, String created_at, String updated_at,
-                         String pushed_at, String git_url, String ssh_url, String clone_url, String svn_url,
-                         String homepage, int size, int stargazers_count, int watchers_count, String language,
-                         boolean has_issues, boolean has_projects, boolean has_downloads, boolean has_wiki,
-                         boolean has_pages, int forks_count, String mirror_url, boolean archived,
-                         boolean disabled, int open_issues_count, Owner owner, License license) {
-        this.id = id;
-        this.node_id = node_id;
-        this.name = name;
-        this.full_name = full_name;
-        this.isPrivate = isPrivate;
-        this.html_url = html_url;
-        this.description = description;
-        this.fork = fork;
-        this.url = url;
-        this.forks_url = forks_url;
-        this.keys_url = keys_url;
-        this.collaborators_url = collaborators_url;
-        this.teams_url = teams_url;
-        this.hooks_url = hooks_url;
-        this.issue_events_url = issue_events_url;
-        this.events_url = events_url;
-        this.assignees_url = assignees_url;
-        this.branches_url = branches_url;
-        this.tags_url = tags_url;
-        this.blobs_url = blobs_url;
-        this.git_tags_url = git_tags_url;
-        this.git_refs_url = git_refs_url;
-        this.trees_url = trees_url;
-        this.statuses_url = statuses_url;
-        this.languages_url = languages_url;
-        this.stargazers_url = stargazers_url;
-        this.contributors_url = contributors_url;
-        this.subscribers_url = subscribers_url;
-        this.subscription_url = subscription_url;
-        this.commits_url = commits_url;
-        this.git_commits_url = git_commits_url;
-        this.comments_url = comments_url;
-        this.issue_comment_url = issue_comment_url;
-        this.contents_url = contents_url;
-        this.compare_url = compare_url;
-        this.merges_url = merges_url;
-        this.archive_url = archive_url;
-        this.downloads_url = downloads_url;
-        this.issues_url = issues_url;
-        this.pulls_url = pulls_url;
-        this.milestones_url = milestones_url;
-        this.notifications_url = notifications_url;
-        this.labels_url = labels_url;
-        this.releases_url = releases_url;
-        this.deployments_url = deployments_url;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.pushed_at = pushed_at;
-        this.git_url = git_url;
-        this.ssh_url = ssh_url;
-        this.clone_url = clone_url;
-        this.svn_url = svn_url;
-        this.homepage = homepage;
-        this.size = size;
-        this.stargazers_count = stargazers_count;
-        this.watchers_count = watchers_count;
-        this.language = language;
-        this.has_issues = has_issues;
-        this.has_projects = has_projects;
-        this.has_downloads = has_downloads;
-        this.has_wiki = has_wiki;
-        this.has_pages = has_pages;
-        this.forks_count = forks_count;
-        this.mirror_url = mirror_url;
-        this.archived = archived;
-        this.disabled = disabled;
-        this.open_issues_count = open_issues_count;
-        this.owner = owner;
-        this.license = license;
+    public boolean isAllow_squash_merge() {
+        return allow_squash_merge;
+    }
+
+    public void setAllow_squash_merge(boolean allow_squash_merge) {
+        this.allow_squash_merge = allow_squash_merge;
+    }
+
+    public boolean isDelete_branch_on_merge() {
+        return delete_branch_on_merge;
+    }
+
+    public void setDelete_branch_on_merge(boolean delete_branch_on_merge) {
+        this.delete_branch_on_merge = delete_branch_on_merge;
+    }
+
+    public boolean isAllow_merge_commit() {
+        return allow_merge_commit;
+    }
+
+    public void setAllow_merge_commit(boolean allow_merge_commit) {
+        this.allow_merge_commit = allow_merge_commit;
+    }
+
+    public int getSubscribers_count() {
+        return subscribers_count;
+    }
+
+    public void setSubscribers_count(int subscribers_count) {
+        this.subscribers_count = subscribers_count;
+    }
+
+    public int getNetwork_count() {
+        return network_count;
+    }
+
+    public void setNetwork_count(int network_count) {
+        this.network_count = network_count;
+    }
+
+    public String getTemp_clone_token() {
+        return temp_clone_token;
+    }
+
+    public void setTemp_clone_token(String temp_clone_token) {
+        this.temp_clone_token = temp_clone_token;
+    }
+
+    public String getTemplate_repository() {
+        return template_repository;
+    }
+
+    public void setTemplate_repository(String template_repository) {
+        this.template_repository = template_repository;
+    }
+
+    public boolean isAllow_rebase_merge() {
+        return allow_rebase_merge;
+    }
+
+    public void setAllow_rebase_merge(boolean allow_rebase_merge) {
+        this.allow_rebase_merge = allow_rebase_merge;
+    }
+
+    public Permissions getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(Permissions permissions) {
+        this.permissions = permissions;
+    }
+
+    public String getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    public List<String> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<String> topics) {
+        this.topics = topics;
+    }
+
+    public boolean isTemplate() {
+        return isTemplate;
+    }
+
+    public void setTemplate(boolean template) {
+        isTemplate = template;
+    }
+
+    public String getDefault_branch() {
+        return default_branch;
+    }
+
+    public int getOpen_issues() {
+        return open_issues;
+    }
+
+    public void setOpen_issues(int open_issues) {
+        this.open_issues = open_issues;
+    }
+
+    public void setDefault_branch(String default_branch) {
+        this.default_branch = default_branch;
+    }
+
+    public int getWatchers() {
+        return watchers;
+    }
+
+    public void setWatchers(int watchers) {
+        this.watchers = watchers;
+    }
+
+    public int getForks() {
+        return forks;
+    }
+
+    public void setForks(int forks) {
+        this.forks = forks;
     }
 
     public Owner getOwner() {

@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.print.Pageable;
 import java.io.IOException;
+import java.util.List;
+
 /**
  * @author mingyux
  */
@@ -28,9 +29,9 @@ public class UserRestController {
         return userDao.findByName(name);
     }
     @GetMapping("/users/{name}/repos")
-    public GitRepository getRepositoriesByUserName(@PathVariable String name,
-                                                   @RequestParam( "page" ) int page,
-                                                   @RequestParam( "size" ) int size) throws IOException {
+    public List<GitRepository> getRepositoriesByUserName(@PathVariable String name,
+                                                         @RequestParam( "page" ) int page,
+                                                         @RequestParam( "size" ) int size) throws IOException {
         return repositoryDao.findByUserNameWithPage(name, page, size);
     }
 

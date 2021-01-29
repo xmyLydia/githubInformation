@@ -9,13 +9,23 @@ public class License {
     private String spdx_id;//"MIT",
     private String url;//"https://api.github.com/licenses/mit",
     private String node_id;//"MDc6TGljZW5zZTEz"
+    private String html_url;
 
-    public License(String key, String name, String spdx_id, String url, String node_id) {
+    public License(String key, String name, String spdx_id, String url, String node_id, String html_url) {
         this.key = key;
         this.name = name;
         this.spdx_id = spdx_id;
         this.url = url;
         this.node_id = node_id;
+        this.html_url = html_url;
+    }
+
+    public String getHtml_url() {
+        return html_url;
+    }
+
+    public void setHtml_url(String html_url) {
+        this.html_url = html_url;
     }
 
     public License() {
