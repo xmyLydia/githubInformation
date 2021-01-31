@@ -1,0 +1,31 @@
+Arguments: 
+  D:\download\Node\node.exe C:\Users\mingyux\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
+
+PATH: 
+  C:\Users\mingyux\bin;D:\Git\Git\mingw64\bin;D:\Git\Git\usr\local\bin;D:\Git\Git\usr\bin;D:\Git\Git\usr\bin;D:\Git\Git\mingw64\bin;D:\Git\Git\usr\bin;C:\Users\mingyux\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_221\bi;C:\Program Files\Java\jdk1.8.0_221\jre\bin;.;D:\download\Anaconda\envs\allennlp;D:\download\Anaconda\envs\allennlp\Scripts;D:\download\Node;D:\download\notepad\Notepad++;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\download\notepad\Notepad++;D:\download\maven\apache-maven-3.6.2\bin;C:\Program Files\PostgreSQL\11\bin;C:\Program Files\PostgreSQL\11\lib;D:\Git\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\mingyux\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Users\mingyux\AppData\Local\GitHubDesktop\bin;C:\Users\mingyux\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mingyux\AppData\Roaming\npm;D:\IDEA_Intellij\IntelliJ IDEA Community Edition 2019.1.1\bin;C:\Program Files\Java\jdk-11.0.4\bin;D:\Groovy\groovy-2.5.7\bin;D:\Gradle\gradle-5.4.1\bin;D:\CLI\spring-2.1.5.RELEASE\bin;D:\IDEAUltimate\IntelliJ IDEA 2019.1.2\bin;D:\Maven\apache-maven-3.6.1\bin;C:\Users\mingyux\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;D:\Git\Git\usr\bin\vendor_perl;D:\Git\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: Can't answer a question unless a user TTY
+      at ConsoleReporter.question (C:\Users\mingyux\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:96800:59)
+      at Object.<anonymous> (C:\Users\mingyux\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:89075:38)
+      at Generator.next (<anonymous>)
+      at step (C:\Users\mingyux\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\mingyux\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
