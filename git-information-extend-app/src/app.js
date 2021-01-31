@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './style/styles.scss';
 import configureStore from './store/configureStore';
-import 'normalize.css/normalize.css';
 import AppRouter from './routers/AppRouter';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
+import 'normalize.css/normalize.css';
+import './style/styles.scss';
+import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore();
 
