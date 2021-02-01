@@ -28,6 +28,13 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
+git-information-extend-app/node_module
 ### VS Code ###
 .vscode/
+### Ract app indecision app
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/git-information-app
+/git-information-extend-v1-app
+
